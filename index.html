@@ -1,69 +1,1727 @@
-Absolutely. I can create a **modern DevOps/Azure-focused portfolio** for you using HTML + CSS, including:
+Yes. You can keep **everything in a single `index.html` file** by putting the CSS inside `<style>...</style>` in the HTML `<head>`.
 
-* Hero section
-* About Me
-* Skills
-* Projects
-* Terraform & Azure experience
-* Docker/Git/Linux skills
-* Education
-* Contact section
-* Responsive design for mobile/desktop
-* Modern animations and clean UI
-
-Since you haven't provided your exact personal details yet, I'll use **editable placeholder information** that you can replace.
-
-### `index.html`
+Save the following as **`index.html`** and open it directly in your browser.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Your Name | DevOps Engineer</title>
 
-    <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           ROOT VARIABLES
+        ====================================================== */
+
+        :root {
+
+            --bg-dark: #070b1a;
+
+            --bg-secondary: #0d1328;
+
+            --card-bg: rgba(20, 28, 55, 0.65);
+
+            --text-main: #f8fafc;
+
+            --text-light: #cbd5e1;
+
+            --text-muted: #94a3b8;
+
+            --blue: #38bdf8;
+
+            --cyan: #22d3ee;
+
+            --purple: #a855f7;
+
+            --pink: #ec4899;
+
+            --violet: #8b5cf6;
+
+            --green: #22c55e;
+
+            --yellow: #facc15;
+
+            --orange: #fb923c;
+
+            --border: rgba(148, 163, 184, 0.18);
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: "Poppins", sans-serif;
+
+            color: var(--text-main);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(56, 189, 248, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 10%,
+                    rgba(168, 85, 247, 0.15),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 90%,
+                    rgba(236, 72, 153, 0.10),
+                    transparent 30%
+                ),
+
+                #070b1a;
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ====================================================== */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #050816;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background:
+                linear-gradient(
+                    #38bdf8,
+                    #8b5cf6,
+                    #ec4899
+                );
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ====================================================== */
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background:
+                rgba(7, 11, 26, 0.75);
+
+            backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .navbar {
+
+            max-width: 1200px;
+
+            height: 78px;
+
+            margin: auto;
+
+            padding: 0 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        /* LOGO */
+
+        .logo {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #a855f7,
+                    #ec4899
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .logo span {
+            color: #22d3ee;
+        }
+
+
+        /* NAV LINKS */
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 32px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            position: relative;
+
+            color: var(--text-light);
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+
+            bottom: -7px;
+
+            width: 0;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #38bdf8,
+                    #a855f7,
+                    #ec4899
+                );
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 100vh;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 150px 25px 100px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 70px;
+        }
+
+
+        .hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            top: 100px;
+
+            left: -180px;
+
+            background: #8b5cf6;
+
+            filter: blur(150px);
+
+            opacity: 0.18;
+
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+
+            height: 350px;
+
+            right: -150px;
+
+            bottom: 50px;
+
+            background: #ec4899;
+
+            filter: blur(150px);
+
+            opacity: 0.16;
+
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+
+        .hero-content {
+            flex: 1;
+        }
+
+
+        .small-title {
+
+            display: inline-block;
+
+            padding: 6px 15px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: var(--cyan);
+
+            background:
+                rgba(34, 211, 238, 0.08);
+
+            border:
+                1px solid rgba(34, 211, 238, 0.2);
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(48px, 7vw, 78px);
+
+            line-height: 1.1;
+
+            margin: 18px 0 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #38bdf8,
+                    #a855f7,
+                    #ec4899
+                );
+
+            background-size: 300% auto;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                gradientText 6s linear infinite;
+        }
+
+
+        @keyframes gradientText {
+
+            0% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 100% center;
+            }
+
+            100% {
+                background-position: 0% center;
+            }
+
+        }
+
+
+        .hero h2 {
+
+            font-size: 25px;
+
+            color: var(--text-light);
+
+            font-weight: 500;
+        }
+
+
+        .hero h2 span {
+            color: var(--pink);
+        }
+
+
+        .hero-description {
+
+            max-width: 600px;
+
+            margin-top: 25px;
+
+            color: var(--text-muted);
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ====================================================== */
+
+        .hero-buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            gap: 15px;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 13px 27px;
+
+            border-radius: 8px;
+
+            font-weight: 600;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .primary-btn {
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #06b6d4,
+                    #6366f1,
+                    #ec4899
+                );
+
+            box-shadow:
+                0 10px 30px
+                rgba(99, 102, 241, 0.25);
+        }
+
+
+        .primary-btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 15px 40px
+                rgba(236, 72, 153, 0.30);
+        }
+
+
+        .secondary-btn {
+
+            color: var(--text-light);
+
+            border:
+                1px solid
+                rgba(148, 163, 184, 0.25);
+
+            background:
+                rgba(255,255,255,0.03);
+        }
+
+
+        .secondary-btn:hover {
+
+            color: white;
+
+            border-color: var(--cyan);
+
+            transform:
+                translateY(-4px);
+        }
+
+
+        /* =====================================================
+           TERMINAL
+        ====================================================== */
+
+        .terminal {
+
+            width: 480px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17,24,39,0.9),
+                    rgba(15,23,42,0.7)
+                );
+
+            border:
+                1px solid
+                rgba(56,189,248,0.25);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.45),
+
+                0 0 40px
+                rgba(56,189,248,0.08);
+
+            overflow: hidden;
+
+            backdrop-filter: blur(15px);
+
+            animation:
+                terminalFloat 5s ease-in-out infinite;
+        }
+
+
+        @keyframes terminalFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+
+        .terminal-header {
+
+            height: 45px;
+
+            background:
+                rgba(15,23,42,0.85);
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding-left: 18px;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .terminal-header span {
+
+            width: 12px;
+
+            height: 12px;
+
+            border-radius: 50%;
+        }
+
+
+        .terminal-header span:nth-child(1) {
+            background: #ff5f56;
+        }
+
+
+        .terminal-header span:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+
+        .terminal-header span:nth-child(3) {
+            background: #27c93f;
+        }
+
+
+        .terminal-body {
+
+            padding: 28px;
+
+            font-family:
+                "Courier New", monospace;
+
+            font-size: 14px;
+
+            line-height: 2;
+        }
+
+
+        .green {
+            color: #22c55e;
+        }
+
+
+        .blue {
+            color: #38bdf8;
+        }
+
+
+        .yellow {
+            color: #facc15;
+        }
+
+
+        .success {
+            color: #22c55e;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ====================================================== */
+
+        .section {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 110px 25px;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 65px;
+        }
+
+
+        .section-title p {
+
+            color: var(--cyan);
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 42px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #38bdf8,
+                    #a855f7
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ====================================================== */
+
+        .about-container {
+
+            display: grid;
+
+            grid-template-columns:
+                350px 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .about-image {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .image-placeholder {
+
+            width: 280px;
+
+            height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            color: white;
+
+            font-size: 25px;
+
+            font-weight: 700;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111827,
+                    #1e1b4b
+                );
+
+            border:
+                2px solid #38bdf8;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.4);
+        }
+
+
+        .about-content h3 {
+
+            font-size: 28px;
+
+            line-height: 1.4;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-content p {
+
+            color: var(--text-muted);
+
+            margin-bottom: 15px;
+        }
+
+
+        .about-content strong {
+            color: var(--cyan);
+        }
+
+
+        .about-info {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+
+        .about-info div {
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid var(--border);
+
+            transition: 0.3s;
+        }
+
+
+        .about-info div:hover {
+
+            transform:
+                translateY(-3px);
+
+            border-color:
+                rgba(56,189,248,0.35);
+        }
+
+
+        .about-info strong {
+
+            display: block;
+
+            color: var(--pink);
+
+            font-size: 13px;
+        }
+
+
+        .about-info span {
+
+            color: var(--text-light);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ====================================================== */
+
+        .skills-section {
+
+            max-width: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(15,23,42,0.5),
+                    rgba(30,27,75,0.3)
+                );
+
+            border-top:
+                1px solid rgba(255,255,255,0.03);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.03);
+        }
+
+
+        .skills-section > * {
+
+            max-width: 1150px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+
+        .skill-card {
+
+            padding: 32px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(30,41,59,0.65),
+                    rgba(15,23,42,0.65)
+                );
+
+            border:
+                1px solid var(--border);
+
+            backdrop-filter: blur(12px);
+
+            transition: 0.4s;
+        }
+
+
+        .skill-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(56,189,248,0.45);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.3);
+        }
+
+
+        .skill-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 12px;
+
+            font-size: 26px;
+
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(56,189,248,0.2),
+                    rgba(139,92,246,0.2)
+                );
+
+            border:
+                1px solid
+                rgba(56,189,248,0.2);
+        }
+
+
+        .skill-card h3 {
+
+            font-size: 20px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .skill-card p {
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ====================================================== */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .project-card {
+
+            padding: 32px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(17,24,39,0.85),
+                    rgba(30,27,75,0.45)
+                );
+
+            border:
+                1px solid var(--border);
+
+            transition: 0.4s;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .project-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            border-color:
+                rgba(139,92,246,0.4);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.35);
+        }
+
+
+        .project-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+
+        .folder {
+
+            font-size: 32px;
+        }
+
+
+        .project-link {
+
+            color: var(--cyan);
+
+            font-size: 13px;
+        }
+
+
+        .project-link:hover {
+            color: var(--pink);
+        }
+
+
+        .project-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .project-card p {
+
+            color: var(--text-muted);
+
+            font-size: 14px;
+        }
+
+
+        .tech-stack {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 22px;
+        }
+
+
+        .tech-stack span {
+
+            padding: 5px 11px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            color: #bae6fd;
+
+            background:
+                rgba(56,189,248,0.08);
+
+            border:
+                1px solid
+                rgba(56,189,248,0.15);
+        }
+
+
+        /* =====================================================
+           EXPERIENCE
+        ====================================================== */
+
+        .experience-section {
+
+            max-width: 100%;
+
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(139,92,246,0.08),
+                    transparent 50%
+                );
+        }
+
+
+        .experience-section > * {
+
+            max-width: 800px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+        }
+
+
+        .timeline {
+
+            position: relative;
+
+            border-left:
+                2px solid
+                rgba(139,92,246,0.25);
+
+            padding-left: 35px;
+        }
+
+
+        .timeline-item {
+
+            position: relative;
+
+            margin-bottom: 55px;
+        }
+
+
+        .timeline-dot {
+
+            position: absolute;
+
+            width: 14px;
+
+            height: 14px;
+
+            left: -43px;
+
+            top: 8px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #38bdf8,
+                    #a855f7,
+                    #ec4899
+                );
+
+            box-shadow:
+                0 0 20px
+                rgba(168,85,247,0.6);
+        }
+
+
+        .timeline-date {
+
+            display: inline-block;
+
+            padding: 4px 12px;
+
+            border-radius: 20px;
+
+            color: var(--cyan);
+
+            background:
+                rgba(34,211,238,0.08);
+
+            font-size: 12px;
+        }
+
+
+        .timeline-content h3 {
+
+            font-size: 22px;
+
+            margin-top: 10px;
+        }
+
+
+        .timeline-content h4 {
+
+            color: var(--purple);
+
+            font-weight: 500;
+        }
+
+
+        .timeline-content p {
+
+            color: var(--text-muted);
+
+            margin-top: 10px;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ====================================================== */
+
+        .contact-container {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+        }
+
+
+        .contact-info h3 {
+
+            font-size: 30px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    white,
+                    #38bdf8,
+                    #a855f7
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            margin-bottom: 15px;
+        }
+
+
+        .contact-info > p {
+
+            color: var(--text-muted);
+
+            margin-bottom: 30px;
+        }
+
+
+        .contact-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 20px;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(255,255,255,0.02);
+
+            transition: 0.3s;
+        }
+
+
+        .contact-item:hover {
+
+            transform:
+                translateX(5px);
+
+            border-color:
+                rgba(56,189,248,0.3);
+        }
+
+
+        .contact-item > span {
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(56,189,248,0.08);
+
+            font-size: 20px;
+        }
+
+
+        .contact-item strong {
+
+            color: var(--cyan);
+
+            font-size: 13px;
+        }
+
+
+        .contact-item p {
+
+            color: var(--text-muted);
+
+            font-size: 13px;
+        }
+
+
+        /* CONTACT FORM */
+
+        .contact-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,0.025);
+
+            border:
+                1px solid var(--border);
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .contact-form input,
+        .contact-form textarea {
+
+            width: 100%;
+
+            background:
+                rgba(15,23,42,0.7);
+
+            border:
+                1px solid
+                rgba(148,163,184,0.15);
+
+            border-radius: 8px;
+
+            padding: 14px 16px;
+
+            color: white;
+
+            font-family: inherit;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #64748b;
+        }
+
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+
+            border-color: #38bdf8;
+
+            box-shadow:
+                0 0 20px
+                rgba(56,189,248,0.08);
+        }
+
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top:
+                1px solid
+                rgba(148,163,184,0.1);
+
+            padding: 35px 25px;
+
+            background: #040713;
+        }
+
+
+        .footer-content {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE TABLET
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+                padding-top: 130px;
+            }
+
+
+            .hero-description {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .hero-buttons {
+
+                justify-content: center;
+            }
+
+
+            .terminal {
+
+                width: 100%;
+
+                max-width: 500px;
+            }
+
+
+            .about-container {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+
+            .about-info {
+
+                text-align: left;
+            }
+
+
+            .skills-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .contact-container {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE MOBILE
+        ====================================================== */
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero {
+
+                padding:
+                    120px 20px 70px;
+            }
+
+
+            .hero h1 {
+
+                font-size: 48px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 19px;
+            }
+
+
+            .hero-buttons {
+
+                flex-direction: column;
+            }
+
+
+            .btn {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            .terminal {
+
+                font-size: 12px;
+            }
+
+
+            .section {
+
+                padding:
+                    80px 20px;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 34px;
+            }
+
+
+            .skills-grid,
+            .projects-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .about-info {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .image-placeholder {
+
+                width: 240px;
+
+                height: 290px;
+            }
+
+
+            .contact-form {
+
+                padding: 20px;
+            }
+
+
+            .footer-content {
+
+                flex-direction: column;
+
+                gap: 12px;
+
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
 
     <header>
+
         <nav class="navbar">
 
             <div class="logo">
-                <span>&lt;</span>DevPortfolio<span>/&gt;</span>
+                &lt;DevPortfolio/&gt;
             </div>
 
+
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
             </ul>
 
         </nav>
+
     </header>
 
 
-    <!-- ================= HERO ================= -->
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section id="home" class="hero">
 
+
         <div class="hero-content">
 
-            <p class="small-title">HELLO, I'M</p>
+            <p class="small-title">
+                HELLO, I'M
+            </p>
 
-            <h1>Your Name</h1>
+
+            <h1>
+                Your Name
+            </h1>
+
 
             <h2>
                 DevOps Engineer
@@ -71,21 +1729,31 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
                 Azure Cloud
             </h2>
 
+
             <p class="hero-description">
-                I am passionate about Cloud Computing, DevOps,
-                Infrastructure as Code and automation.
-                I enjoy building scalable and reliable infrastructure
-                using modern DevOps tools and technologies.
+
+                I am a passionate DevOps and Cloud enthusiast
+                focused on building scalable infrastructure,
+                automation and reliable deployment pipelines.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#projects" class="btn primary-btn">
+                <a href="#projects"
+                   class="btn primary-btn">
+
                     View My Projects
+
                 </a>
 
-                <a href="#contact" class="btn secondary-btn">
+
+                <a href="#contact"
+                   class="btn secondary-btn">
+
                     Contact Me
+
                 </a>
 
             </div>
@@ -93,40 +1761,77 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
         </div>
 
 
+
+        <!-- TERMINAL -->
+
         <div class="terminal">
 
+
             <div class="terminal-header">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
+
 
             <div class="terminal-body">
 
                 <p>
-                    <span class="green">user</span>@portfolio:
-                    <span class="blue">~$</span>
+
+                    <span class="green">
+                        user
+                    </span>
+
+                    @portfolio:
+
+                    <span class="blue">
+                        ~$ 
+                    </span>
+
                 </p>
 
+
                 <p>
-                    terraform <span class="yellow">apply</span>
+                    terraform
+                    <span class="yellow">
+                        apply
+                    </span>
                 </p>
+
 
                 <p class="success">
                     ✔ Infrastructure deployed successfully
                 </p>
 
+
                 <p>
-                    docker <span class="yellow">ps</span>
+
+                    docker
+                    <span class="yellow">
+                        ps
+                    </span>
+
                 </p>
+
 
                 <p class="success">
                     ✔ Containers running
                 </p>
 
+
                 <p>
-                    git <span class="yellow">push</span> origin main
+
+                    git
+                    <span class="yellow">
+                        push
+                    </span>
+
+                    origin main
+
                 </p>
+
 
                 <p class="success">
                     ✔ Deployment completed
@@ -139,69 +1844,140 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
 
     <section id="about" class="section">
 
+
         <div class="section-title">
-            <p>GET TO KNOW ME</p>
-            <h2>About Me</h2>
+
+            <p>
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About Me
+            </h2>
+
         </div>
+
+
 
         <div class="about-container">
 
+
             <div class="about-image">
+
                 <div class="image-placeholder">
-                    YOUR<br>PHOTO
+
+                    YOUR<br>
+                    PHOTO
+
                 </div>
+
             </div>
+
+
 
             <div class="about-content">
 
+
                 <h3>
-                    DevOps Engineer passionate about
-                    Cloud & Automation.
+
+                    DevOps Engineer passionate
+                    about Cloud & Automation.
+
                 </h3>
 
-                <p>
-                    Hello! I am <strong>Your Name</strong>, a
-                    DevOps enthusiast interested in cloud computing,
-                    automation and infrastructure management.
-                </p>
 
                 <p>
-                    I have hands-on experience with technologies such as
-                    Microsoft Azure, Terraform, Docker, Git, Linux and
-                    CI/CD concepts.
+
+                    Hello! I am
+                    <strong>Your Name</strong>,
+
+                    a DevOps enthusiast interested
+                    in cloud computing, automation
+                    and infrastructure management.
+
                 </p>
 
+
                 <p>
-                    My goal is to build reliable, automated and
-                    scalable infrastructure while continuously learning
-                    new technologies.
+
+                    I have hands-on experience with
+                    technologies such as Microsoft Azure,
+                    Terraform, Docker, Git and Linux.
+
                 </p>
+
+
+                <p>
+
+                    My goal is to build reliable,
+                    automated and scalable infrastructure
+                    using modern DevOps practices.
+
+                </p>
+
+
 
                 <div class="about-info">
 
-                    <div>
-                        <strong>Name:</strong>
-                        <span>Your Name</span>
-                    </div>
 
                     <div>
-                        <strong>Role:</strong>
-                        <span>DevOps Engineer</span>
+
+                        <strong>
+                            Name
+                        </strong>
+
+                        <span>
+                            Your Name
+                        </span>
+
                     </div>
 
-                    <div>
-                        <strong>Location:</strong>
-                        <span>India</span>
-                    </div>
 
                     <div>
-                        <strong>Email:</strong>
-                        <span>your@email.com</span>
+
+                        <strong>
+                            Role
+                        </strong>
+
+                        <span>
+                            DevOps Engineer
+                        </span>
+
                     </div>
+
+
+                    <div>
+
+                        <strong>
+                            Location
+                        </strong>
+
+                        <span>
+                            India
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <span>
+                            your@email.com
+                        </span>
+
+                    </div>
+
 
                 </div>
 
@@ -212,91 +1988,194 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
 
-    <section id="skills" class="section skills-section">
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills"
+             class="section skills-section">
+
 
         <div class="section-title">
-            <p>WHAT I WORK WITH</p>
-            <h2>Technical Skills</h2>
+
+            <p>
+                WHAT I WORK WITH
+            </p>
+
+            <h2>
+                Technical Skills
+            </h2>
+
         </div>
+
 
 
         <div class="skills-grid">
 
+
             <div class="skill-card">
-                <div class="skill-icon">☁</div>
-                <h3>Azure</h3>
+
+                <div class="skill-icon">
+                    ☁
+                </div>
+
+                <h3>
+                    Microsoft Azure
+                </h3>
+
                 <p>
-                    Azure VM, Storage Account, VNet,
-                    Load Balancer, Resource Groups
+
+                    Azure Virtual Machines,
+                    Storage Accounts, VNets,
+                    Load Balancers and
+                    Resource Groups.
+
                 </p>
+
             </div>
 
 
+
             <div class="skill-card">
-                <div class="skill-icon">⚙</div>
-                <h3>Terraform</h3>
+
+                <div class="skill-icon">
+                    ⚙
+                </div>
+
+                <h3>
+                    Terraform
+                </h3>
+
                 <p>
+
                     Infrastructure as Code,
-                    Variables, Resources, State,
-                    Backend and Providers
+                    Resources, Variables,
+                    State Files, Providers
+                    and Backend.
+
                 </p>
+
             </div>
 
 
+
             <div class="skill-card">
-                <div class="skill-icon">◈</div>
-                <h3>Docker</h3>
+
+                <div class="skill-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Docker
+                </h3>
+
                 <p>
-                    Images, Containers, Dockerfile,
-                    Volumes, Networks and Registries
+
+                    Docker Images,
+                    Containers, Dockerfiles,
+                    Networks, Volumes
+                    and Registries.
+
                 </p>
+
             </div>
 
 
+
             <div class="skill-card">
-                <div class="skill-icon">⎇</div>
-                <h3>Git</h3>
+
+                <div class="skill-icon">
+                    ⎇
+                </div>
+
+                <h3>
+                    Git & GitHub
+                </h3>
+
                 <p>
-                    Git workflow, Branching, Merging,
-                    Rebase, Reset and GitHub
+
+                    Branching, Merging,
+                    Reset, Rebase,
+                    Stash, Pull Requests
+                    and GitHub workflows.
+
                 </p>
+
             </div>
 
 
+
             <div class="skill-card">
-                <div class="skill-icon">⌘</div>
-                <h3>Linux</h3>
+
+                <div class="skill-icon">
+                    ⌘
+                </div>
+
+                <h3>
+                    Linux
+                </h3>
+
                 <p>
-                    Linux commands, Users, Permissions,
-                    Processes and Shell basics
+
+                    Linux commands,
+                    Users, Permissions,
+                    Processes, Services
+                    and Shell basics.
+
                 </p>
+
             </div>
 
 
+
             <div class="skill-card">
-                <div class="skill-icon">∞</div>
-                <h3>CI/CD</h3>
+
+                <div class="skill-icon">
+                    ∞
+                </div>
+
+                <h3>
+                    CI/CD
+                </h3>
+
                 <p>
+
                     Continuous Integration,
-                    Continuous Deployment and automation
+                    Continuous Deployment
+                    and DevOps automation.
+
                 </p>
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
 
-    <section id="projects" class="section">
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="projects"
+             class="section">
+
 
         <div class="section-title">
-            <p>MY WORK</p>
-            <h2>Projects</h2>
+
+            <p>
+                MY WORK
+            </p>
+
+            <h2>
+                Featured Projects
+            </h2>
+
         </div>
+
 
 
         <div class="projects-grid">
@@ -307,29 +2186,60 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
             <div class="project-card">
 
                 <div class="project-top">
-                    <span class="folder">📁</span>
 
-                    <div>
-                        <a href="#" class="project-link">GitHub ↗</a>
-                    </div>
+                    <span class="folder">
+                        📁
+                    </span>
+
+                    <a href="#"
+                       class="project-link">
+
+                        GitHub ↗
+
+                    </a>
+
                 </div>
 
-                <h3>Azure Infrastructure using Terraform</h3>
+
+                <h3>
+
+                    Azure Infrastructure
+                    using Terraform
+
+                </h3>
+
 
                 <p>
-                    Created Azure infrastructure using Terraform
-                    following Infrastructure as Code principles.
-                    Managed resources such as Resource Groups,
-                    Storage Accounts, VNets and Virtual Machines.
+
+                    Created Azure infrastructure
+                    using Terraform and Infrastructure
+                    as Code principles.
+
+                    Managed Resource Groups,
+                    Storage Accounts, VNets
+                    and Virtual Machines.
+
                 </p>
 
+
                 <div class="tech-stack">
-                    <span>Terraform</span>
-                    <span>Azure</span>
-                    <span>IaC</span>
+
+                    <span>
+                        Terraform
+                    </span>
+
+                    <span>
+                        Azure
+                    </span>
+
+                    <span>
+                        IaC
+                    </span>
+
                 </div>
 
             </div>
+
 
 
             <!-- PROJECT 2 -->
@@ -337,28 +2247,57 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
             <div class="project-card">
 
                 <div class="project-top">
-                    <span class="folder">📁</span>
 
-                    <div>
-                        <a href="#" class="project-link">GitHub ↗</a>
-                    </div>
+                    <span class="folder">
+                        📁
+                    </span>
+
+                    <a href="#"
+                       class="project-link">
+
+                        GitHub ↗
+
+                    </a>
+
                 </div>
 
-                <h3>Docker Application Deployment</h3>
+
+                <h3>
+
+                    Docker Application
+                    Deployment
+
+                </h3>
+
 
                 <p>
-                    Containerized an application using Docker,
-                    created Docker images and managed containers,
+
+                    Containerized applications
+                    using Docker and managed
+                    images, containers,
                     networks and volumes.
+
                 </p>
 
+
                 <div class="tech-stack">
-                    <span>Docker</span>
-                    <span>Linux</span>
-                    <span>Git</span>
+
+                    <span>
+                        Docker
+                    </span>
+
+                    <span>
+                        Linux
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
                 </div>
 
             </div>
+
 
 
             <!-- PROJECT 3 -->
@@ -366,29 +2305,58 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
             <div class="project-card">
 
                 <div class="project-top">
-                    <span class="folder">📁</span>
 
-                    <div>
-                        <a href="#" class="project-link">GitHub ↗</a>
-                    </div>
+                    <span class="folder">
+                        📁
+                    </span>
+
+                    <a href="#"
+                       class="project-link">
+
+                        GitHub ↗
+
+                    </a>
+
                 </div>
 
-                <h3>Azure Load Balancer Infrastructure</h3>
+
+                <h3>
+
+                    Azure Load Balancer
+                    Infrastructure
+
+                </h3>
+
 
                 <p>
-                    Designed Azure infrastructure containing
-                    Virtual Machines, Network Interfaces,
-                    Public IP, Load Balancer and networking
+
+                    Designed Azure infrastructure
+                    containing Virtual Machines,
+                    Network Interfaces, Public IP,
+                    Load Balancer and networking
                     components using Terraform.
+
                 </p>
 
+
                 <div class="tech-stack">
-                    <span>Azure</span>
-                    <span>Terraform</span>
-                    <span>Networking</span>
+
+                    <span>
+                        Azure
+                    </span>
+
+                    <span>
+                        Terraform
+                    </span>
+
+                    <span>
+                        Networking
+                    </span>
+
                 </div>
 
             </div>
+
 
 
             <!-- PROJECT 4 -->
@@ -396,152 +2364,294 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
             <div class="project-card">
 
                 <div class="project-top">
-                    <span class="folder">📁</span>
 
-                    <div>
-                        <a href="#" class="project-link">GitHub ↗</a>
-                    </div>
+                    <span class="folder">
+                        📁
+                    </span>
+
+                    <a href="#"
+                       class="project-link">
+
+                        GitHub ↗
+
+                    </a>
+
                 </div>
 
-                <h3>CI/CD Pipeline</h3>
+
+                <h3>
+
+                    CI/CD Pipeline
+
+                </h3>
+
 
                 <p>
-                    Built an automated CI/CD workflow to
-                    build, test and deploy applications
-                    using DevOps practices.
+
+                    Built an automated CI/CD
+                    workflow to build, test
+                    and deploy applications
+                    following DevOps practices.
+
                 </p>
 
+
                 <div class="tech-stack">
-                    <span>Git</span>
-                    <span>CI/CD</span>
-                    <span>Docker</span>
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        CI/CD
+                    </span>
+
+                    <span>
+                        Docker
+                    </span>
+
                 </div>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= EXPERIENCE ================= -->
 
-    <section class="section experience-section">
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section id="experience"
+             class="section experience-section">
+
 
         <div class="section-title">
-            <p>MY JOURNEY</p>
-            <h2>Experience & Learning</h2>
+
+            <p>
+                MY JOURNEY
+            </p>
+
+            <h2>
+                Experience & Learning
+            </h2>
+
         </div>
+
+
 
         <div class="timeline">
 
+
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
+
                 <div class="timeline-content">
 
                     <span class="timeline-date">
+
                         2026 - Present
+
                     </span>
 
-                    <h3>DevOps / Cloud Engineer</h3>
 
-                    <h4>Your Company</h4>
+                    <h3>
+
+                        DevOps / Cloud Engineer
+
+                    </h3>
+
+
+                    <h4>
+
+                        Your Company
+
+                    </h4>
+
 
                     <p>
+
                         Working with cloud infrastructure,
-                        Terraform, Docker, Git and DevOps
-                        automation.
+                        Terraform, Docker, Git and
+                        DevOps automation.
+
                     </p>
 
                 </div>
 
             </div>
+
 
 
             <div class="timeline-item">
 
                 <div class="timeline-dot"></div>
 
+
                 <div class="timeline-content">
 
                     <span class="timeline-date">
+
                         2025 - 2026
+
                     </span>
 
-                    <h3>DevOps Training</h3>
 
-                    <h4>Cloud & DevOps Learning</h4>
+                    <h3>
+
+                        DevOps Training
+
+                    </h3>
+
+
+                    <h4>
+
+                        Cloud & DevOps Learning
+
+                    </h4>
+
 
                     <p>
-                        Learned Azure, Terraform, Docker,
-                        Linux, Git and CI/CD concepts through
+
+                        Learned Azure, Terraform,
+                        Docker, Linux, Git and
+                        CI/CD concepts through
                         hands-on projects.
+
                     </p>
 
                 </div>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
 
-    <section id="contact" class="section contact-section">
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section id="contact"
+             class="section">
+
 
         <div class="section-title">
 
-            <p>GET IN TOUCH</p>
+            <p>
+                GET IN TOUCH
+            </p>
 
-            <h2>Contact Me</h2>
+            <h2>
+                Contact Me
+            </h2>
 
         </div>
+
 
 
         <div class="contact-container">
 
+
             <div class="contact-info">
 
-                <h3>Let's Work Together</h3>
+
+                <h3>
+
+                    Let's Work Together
+
+                </h3>
+
 
                 <p>
-                    Interested in DevOps, Cloud or
-                    Infrastructure projects?
+
+                    Interested in DevOps,
+                    Cloud or Infrastructure projects?
+
                     Feel free to contact me.
+
                 </p>
 
-                <div class="contact-item">
-                    <span>📧</span>
-                    <div>
-                        <strong>Email</strong>
-                        <p>your@email.com</p>
-                    </div>
-                </div>
 
                 <div class="contact-item">
-                    <span>💼</span>
+
+                    <span>
+                        📧
+                    </span>
+
                     <div>
-                        <strong>LinkedIn</strong>
-                        <p>linkedin.com/in/yourprofile</p>
+
+                        <strong>
+                            Email
+                        </strong>
+
+                        <p>
+                            your@email.com
+                        </p>
+
                     </div>
+
                 </div>
 
+
                 <div class="contact-item">
-                    <span>💻</span>
+
+                    <span>
+                        💼
+                    </span>
+
                     <div>
-                        <strong>GitHub</strong>
-                        <p>github.com/yourusername</p>
+
+                        <strong>
+                            LinkedIn
+                        </strong>
+
+                        <p>
+                            linkedin.com/in/yourprofile
+                        </p>
+
                     </div>
+
                 </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        💻
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            GitHub
+                        </strong>
+
+                        <p>
+                            github.com/yourusername
+                        </p>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
 
+
+            <!-- CONTACT FORM -->
+
             <form class="contact-form">
+
 
                 <input
                     type="text"
@@ -549,11 +2659,13 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
                     required
                 >
 
+
                 <input
                     type="email"
                     placeholder="Your Email"
                     required
                 >
+
 
                 <input
                     type="text"
@@ -561,837 +2673,70 @@ Since you haven't provided your exact personal details yet, I'll use **editable 
                     required
                 >
 
+
                 <textarea
-                    placeholder="Your Message"
                     rows="6"
+                    placeholder="Your Message"
                     required
                 ></textarea>
 
-                <button type="submit" class="btn primary-btn">
+
+                <button
+                    type="submit"
+                    class="btn primary-btn">
+
                     Send Message
+
                 </button>
 
+
             </form>
+
 
         </div>
 
     </section>
 
 
-    <!-- ================= FOOTER ================= -->
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
     <footer>
 
+
         <div class="footer-content">
 
+
             <div class="logo">
-                <span>&lt;</span>DevPortfolio<span>/&gt;</span>
+
+                &lt;DevPortfolio/&gt;
+
             </div>
 
-            <p>
-                Built with HTML & CSS
-            </p>
 
             <p>
-                © 2026 Your Name. All Rights Reserved.
+
+                Built with HTML & CSS
+
             </p>
+
+
+            <p>
+
+                © 2026 Your Name.
+                All Rights Reserved.
+
+            </p>
+
 
         </div>
+
 
     </footer>
 
 
 </body>
+
 </html>
-```
-
-### `style.css`
-
-```css
-/* =========================
-   GLOBAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Poppins", sans-serif;
-    background: #0a0f1c;
-    color: #e6edf3;
-    line-height: 1.7;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-section {
-    scroll-margin-top: 80px;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-
-    background: rgba(10, 15, 28, 0.85);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid #1e293b;
-}
-
-.navbar {
-    max-width: 1200px;
-    margin: auto;
-
-    height: 75px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 25px;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.logo span {
-    color: #38bdf8;
-}
-
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #cbd5e1;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #38bdf8;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 100vh;
-
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 140px 25px 80px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 70px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.small-title {
-    color: #38bdf8;
-    font-size: 14px;
-    letter-spacing: 3px;
-    font-weight: 600;
-}
-
-.hero h1 {
-    font-size: clamp(45px, 7vw, 75px);
-    line-height: 1.1;
-    margin: 10px 0;
-}
-
-.hero h2 {
-    font-size: 25px;
-    color: #94a3b8;
-    font-weight: 500;
-}
-
-.hero h2 span {
-    color: #38bdf8;
-}
-
-.hero-description {
-    margin-top: 25px;
-    max-width: 600px;
-    color: #94a3b8;
-}
-
-.hero-buttons {
-    margin-top: 35px;
-
-    display: flex;
-    gap: 15px;
-}
-
-.btn {
-    display: inline-block;
-
-    padding: 12px 25px;
-
-    border-radius: 6px;
-
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.primary-btn {
-    background: #38bdf8;
-    color: #020617;
-}
-
-.primary-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
-}
-
-.secondary-btn {
-    border: 1px solid #334155;
-    color: #e2e8f0;
-}
-
-.secondary-btn:hover {
-    border-color: #38bdf8;
-    color: #38bdf8;
-}
-
-
-/* =========================
-   TERMINAL
-========================= */
-
-.terminal {
-    width: 470px;
-
-    background: #020617;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 10px;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-
-    overflow: hidden;
-}
-
-.terminal-header {
-    height: 40px;
-
-    background: #111827;
-
-    display: flex;
-    align-items: center;
-
-    gap: 8px;
-
-    padding-left: 15px;
-}
-
-.terminal-header span {
-    width: 11px;
-    height: 11px;
-
-    border-radius: 50%;
-
-    background: #475569;
-}
-
-.terminal-body {
-    padding: 25px;
-
-    font-family: monospace;
-
-    font-size: 14px;
-
-    line-height: 2;
-}
-
-.green {
-    color: #22c55e;
-}
-
-.blue {
-    color: #38bdf8;
-}
-
-.yellow {
-    color: #facc15;
-}
-
-.success {
-    color: #22c55e;
-}
-
-
-/* =========================
-   SECTION
-========================= */
-
-.section {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 100px 25px;
-}
-
-.section-title {
-    text-align: center;
-
-    margin-bottom: 60px;
-}
-
-.section-title p {
-    color: #38bdf8;
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    font-weight: 600;
-}
-
-.section-title h2 {
-    font-size: 40px;
-
-    margin-top: 5px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-container {
-    display: grid;
-
-    grid-template-columns: 350px 1fr;
-
-    gap: 70px;
-
-    align-items: center;
-}
-
-.about-image {
-    display: flex;
-
-    justify-content: center;
-}
-
-.image-placeholder {
-    width: 280px;
-    height: 320px;
-
-    border: 2px solid #38bdf8;
-
-    border-radius: 10px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    text-align: center;
-
-    color: #38bdf8;
-
-    font-size: 25px;
-
-    font-weight: 700;
-
-    background: #111827;
-}
-
-.about-content h3 {
-    font-size: 28px;
-
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #94a3b8;
-
-    margin-bottom: 15px;
-}
-
-.about-info {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-
-    margin-top: 25px;
-}
-
-.about-info div {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.about-info strong {
-    color: #38bdf8;
-}
-
-.about-info span {
-    color: #cbd5e1;
-}
-
-
-/* =========================
-   SKILLS
-========================= */
-
-.skills-section {
-    max-width: 100%;
-
-    background: #0d1424;
-}
-
-.skills-section > * {
-    max-width: 1150px;
-
-    margin-left: auto;
-
-    margin-right: auto;
-}
-
-.skills-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.skill-card {
-    background: #111827;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 10px;
-
-    padding: 30px;
-
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #38bdf8;
-}
-
-.skill-icon {
-    font-size: 35px;
-
-    color: #38bdf8;
-
-    margin-bottom: 15px;
-}
-
-.skill-card h3 {
-    margin-bottom: 10px;
-}
-
-.skill-card p {
-    color: #94a3b8;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   PROJECTS
-========================= */
-
-.projects-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 25px;
-}
-
-.project-card {
-    background: #111827;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 10px;
-
-    padding: 30px;
-
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-7px);
-
-    border-color: #38bdf8;
-}
-
-.project-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 25px;
-}
-
-.folder {
-    font-size: 30px;
-}
-
-.project-link {
-    color: #38bdf8;
-
-    font-size: 13px;
-}
-
-.project-card h3 {
-    font-size: 21px;
-
-    margin-bottom: 12px;
-}
-
-.project-card p {
-    color: #94a3b8;
-
-    font-size: 14px;
-}
-
-.tech-stack {
-    display: flex;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-    margin-top: 20px;
-}
-
-.tech-stack span {
-    background: #1e293b;
-
-    color: #cbd5e1;
-
-    padding: 5px 10px;
-
-    border-radius: 4px;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   EXPERIENCE
-========================= */
-
-.experience-section {
-    max-width: 100%;
-
-    background: #0d1424;
-}
-
-.experience-section > * {
-    max-width: 800px;
-
-    margin-left: auto;
-
-    margin-right: auto;
-}
-
-.timeline {
-    position: relative;
-
-    border-left: 2px solid #1e293b;
-
-    padding-left: 35px;
-}
-
-.timeline-item {
-    position: relative;
-
-    margin-bottom: 50px;
-}
-
-.timeline-dot {
-    position: absolute;
-
-    width: 13px;
-    height: 13px;
-
-    background: #38bdf8;
-
-    border-radius: 50%;
-
-    left: -42px;
-
-    top: 8px;
-}
-
-.timeline-date {
-    color: #38bdf8;
-
-    font-size: 13px;
-}
-
-.timeline-content h3 {
-    font-size: 22px;
-
-    margin-top: 5px;
-}
-
-.timeline-content h4 {
-    color: #94a3b8;
-
-    font-weight: 400;
-}
-
-.timeline-content p {
-    color: #94a3b8;
-
-    margin-top: 10px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-container {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-}
-
-.contact-info h3 {
-    font-size: 30px;
-
-    margin-bottom: 15px;
-}
-
-.contact-info > p {
-    color: #94a3b8;
-
-    margin-bottom: 30px;
-}
-
-.contact-item {
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin-bottom: 25px;
-}
-
-.contact-item > span {
-    font-size: 25px;
-}
-
-.contact-item strong {
-    color: #38bdf8;
-}
-
-.contact-item p {
-    color: #94a3b8;
-
-    font-size: 14px;
-}
-
-
-.contact-form {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 15px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-
-    background: #111827;
-
-    border: 1px solid #1e293b;
-
-    border-radius: 6px;
-
-    padding: 14px;
-
-    color: white;
-
-    font-family: inherit;
-
-    outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #38bdf8;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    border-top: 1px solid #1e293b;
-
-    padding: 30px 25px;
-
-    background: #020617;
-}
-
-.footer-content {
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    color: #64748b;
-
-    font-size: 13px;
-}
-
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 900px) {
-
-    .hero {
-        flex-direction: column;
-
-        text-align: center;
-
-        padding-top: 130px;
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .terminal {
-        width: 100%;
-
-        max-width: 500px;
-    }
-
-    .about-container {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-    .about-info {
-        text-align: left;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero h2 {
-        font-size: 20px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-info {
-        grid-template-columns: 1fr;
-    }
-
-    .section {
-        padding: 75px 20px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-
-        gap: 10px;
-
-        text-align: center;
-    }
-
-}
